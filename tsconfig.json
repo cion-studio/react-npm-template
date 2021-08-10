@@ -27,6 +27,6 @@
 		"outDir": "./dist"
 	},
 	"include": [
-		"src/lib/index.tsx"
+		"src/lib"
 	]
 }
