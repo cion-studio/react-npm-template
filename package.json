@@ -1,0 +1,50 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "dependencies": {
+    "react-scripts": "4.0.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "client": "npm start",
+    "copy-files": "copyfiles -u 2 src/lib/**/*.css dist",
+    "post-build": "rimraf dist/ && tsc && yarn copy-files",
+    "build": "rm -r ./dist && tsc -p . && npm run post-build && cp package.json dist && cp README.md dist",
+    "deploy": "npm run build && cd dist && npm publish"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.28.0",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "typescript": "^4.3.4"
+  }
+}
